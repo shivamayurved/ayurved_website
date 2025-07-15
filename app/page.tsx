@@ -11,13 +11,14 @@ import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useRef, useState, useEffect } from "react"
+import type { UseEmblaCarouselType } from "embla-carousel-react";
 
 export default function HomePage() {
   useScrollAnimation()
 
   // Carousel state for active slide
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const emblaApiRef = useRef(null);
+  const emblaApiRef = useRef<UseEmblaCarouselType[1] | null>(null);
   const slideCount = 2; // Update if you add more slides
 
   // Listen to carousel changes

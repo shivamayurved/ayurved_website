@@ -3,7 +3,13 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-const Button = React.forwardRef<React.ElementRef<"button">, React.ComponentPropsWithoutRef<"button">>(
+const Button = React.forwardRef<
+  React.ElementRef<"button">,
+  React.ComponentPropsWithoutRef<"button"> & {
+    variant?: "default" | "destructive" | "outline" | "secondary" | "ghost"
+    size?: "default" | "sm" | "lg"
+  }
+>(
   ({ className, children, variant = "default", size = "default", ...props }, ref) => {
     return (
       <button
