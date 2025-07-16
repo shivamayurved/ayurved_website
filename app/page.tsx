@@ -38,11 +38,20 @@ export default function HomePage() {
           <CarouselContent>
             <CarouselItem>
               <div className="relative w-full h-[500px] md:h-[650px]">
+                {/* Mobile image */}
+                <Image
+                  src="/images/banner/hero_section_1_mobile.png"
+                  alt="Bone Joint and Spine Disease"
+                  fill
+                  className="object-cover w-full h-full block md:hidden"
+                  priority
+                />
+                {/* Desktop image */}
                 <Image
                   src="/images/banner/hero_section_1.png"
                   alt="Bone Joint and Spine Disease"
                   fill
-                  className="object-cover object-top w-full h-full"
+                  className="object-cover w-full h-full hidden md:block"
                   priority
                 />
                 <div className="absolute inset-0 flex items-center">
@@ -64,11 +73,20 @@ export default function HomePage() {
             {/* Second Slide: Skin Disease/Rashes */}
             <CarouselItem>
               <div className="relative w-full h-[500px] md:h-[650px]">
+                {/* Mobile image */}
+                <Image
+                  src="/images/banner/hero_section_2_mobile.png"
+                  alt="Skin Disease and Rashes"
+                  fill
+                  className="object-cover w-full h-full block md:hidden"
+                  priority
+                />
+                {/* Desktop image */}
                 <Image
                   src="/images/banner/hero_section_2.png"
                   alt="Skin Disease and Rashes"
                   fill
-                  className="object-cover object-top w-full h-full"
+                  className="object-cover w-full h-full hidden md:block"
                   priority
                 />
                 <div className="absolute inset-0 flex items-center">
