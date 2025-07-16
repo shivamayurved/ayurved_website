@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Carousel Section - moved outside main for full-bleed */}
-      <section className="relative w-screen h-[500px] md:h-[650px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 p-0 left-1/2 right-1/2 -translate-x-1/2">
+      <section className="relative w-full h-[500px] md:h-[650px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 p-0">
         <Carousel className="w-full h-full" setApi={api => (emblaApiRef.current = api)}>
           <CarouselContent>
             <CarouselItem>
