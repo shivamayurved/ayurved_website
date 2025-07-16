@@ -39,7 +39,7 @@ export default function AboutPage() {
             <div className="relative h-[450px] md:h-[550px] rounded-lg overflow-hidden shadow-xl scroll-reveal animate-slideInLeft">
               {/* This image is already provided as dr-Santhosh-kumar.jpeg */}
               <Image 
-                src="/images/dr-Santosh-kumar.jpeg" 
+                src="/images/dr-santosh-kumar.jpeg" 
                 alt="Dr. Santhosh Kumar in clinic" 
                 fill 
                 className="object-cover" 
@@ -79,21 +79,27 @@ export default function AboutPage() {
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="flex flex-col items-center text-center scroll-reveal animate-fadeInUp">
-                <Leaf className="h-16 w-16 text-accent mb-4" />
+                <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/holistic_approach.jpg" alt="Holistic Wellness" width={96} height={96} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Holistic Wellness</h3>
                 <p className="text-gray-600">
                   We treat the individual as a whole – mind, body, and spirit – recognizing their interconnectedness.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center scroll-reveal animate-fadeInUp animation-delay-100">
-                <Heart className="h-16 w-16 text-accent mb-4" />
+                <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/patient_centric.webp" alt="Personalized Care" width={96} height={96} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Personalized Care</h3>
                 <p className="text-gray-600">
                   Every treatment plan is uniquely tailored to your constitution and health needs.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center scroll-reveal animate-fadeInUp animation-delay-200">
-                <Star className="h-16 w-16 text-accent mb-4" />
+                <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/santosh_2.jpg" alt="Empowering Health" width={96} height={96} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Empowering Health</h3>
                 <p className="text-gray-600">
                   We empower you with knowledge and tools to maintain long-term health and vitality.

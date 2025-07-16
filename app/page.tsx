@@ -58,15 +58,16 @@ export default function HomePage() {
                   <div className="bg-green-900/60 backdrop-blur p-3 md:p-8 rounded-xl w-full max-w-xs md:max-w-2xl mx-auto flex flex-col items-center text-center">
                     <h2 className="text-base md:text-4xl font-bold text-white mb-2">Regain Mobility & Live Pain-Free</h2>
                     <p className="text-white text-xs md:text-lg mb-4">Expert Ayurvedic care for Bone, Joint & Spine Disorders</p>
-                    <Link href="/contact" passHref>
-                      <div className="w-full flex justify-center">
-                        <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
-                          <span>Book Appointment</span>
-                          <span className="block text-xs mt-1">(first consultation free)</span>
-                        </Button>
-                      </div>
-                    </Link>
                   </div>
+                </div>
+                {/* Book Appointment Button at the bottom */}
+                <div className="absolute left-1/2 bottom-16 -translate-x-1/2 z-20 w-full flex justify-center">
+                  <Link href="/contact" passHref>
+                    <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
+                      <span>Book Appointment</span>
+                      <span className="block text-xs mt-1">(first consultation free)</span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </CarouselItem>
@@ -93,15 +94,16 @@ export default function HomePage() {
                   <div className="bg-green-900/60 backdrop-blur p-3 md:p-8 rounded-xl w-full max-w-xs md:max-w-2xl mx-auto flex flex-col items-center text-center">
                     <h2 className="text-base md:text-4xl font-bold text-white mb-2">Clear Skin, Confident Life</h2>
                     <p className="text-white text-xs md:text-lg mb-4">Holistic Ayurvedic solutions for skin diseases, rashes, and chronic conditions.</p>
-                    <Link href="/contact" passHref>
-                      <div className="w-full flex justify-center">
-                        <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
-                          <span>Book Appointment</span>
-                          <span className="block text-xs mt-1">(first consultation free)</span>
-                        </Button>
-                      </div>
-                    </Link>
                   </div>
+                </div>
+                {/* Book Appointment Button at the bottom */}
+                <div className="absolute left-1/2 bottom-16 -translate-x-1/2 z-20 w-full flex justify-center">
+                  <Link href="/contact" passHref>
+                    <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
+                      <span>Book Appointment</span>
+                      <span className="block text-xs mt-1">(first consultation free)</span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </CarouselItem>
@@ -128,15 +130,16 @@ export default function HomePage() {
                   <div className="bg-green-900/60 backdrop-blur p-3 md:p-8 rounded-xl w-full max-w-xs md:max-w-2xl mx-auto flex flex-col items-center text-center">
                     <h2 className="text-base md:text-4xl font-bold text-white mb-2">Hope & Healing for Paralysis</h2>
                     <p className="text-white text-xs md:text-lg mb-4">Specialized Ayurvedic therapies for paralysis and neurological recovery.</p>
-                    <Link href="/contact" passHref>
-                      <div className="w-full flex justify-center">
-                        <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
-                          <span>Book Appointment</span>
-                          <span className="block text-xs mt-1">(first consultation free)</span>
-                        </Button>
-                      </div>
-                    </Link>
                   </div>
+                </div>
+                {/* Book Appointment Button at the bottom */}
+                <div className="absolute left-1/2 bottom-16 -translate-x-1/2 z-20 w-full flex justify-center">
+                  <Link href="/contact" passHref>
+                    <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
+                      <span>Book Appointment</span>
+                      <span className="block text-xs mt-1">(first consultation free)</span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </CarouselItem>
@@ -293,19 +296,25 @@ export default function HomePage() {
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="flex flex-col items-center text-center scroll-reveal animate-fadeInUp">
-                <Star className="h-16 w-16 text-accent mb-4" />
+                <div className="h-16 w-16 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/santosh_2.jpg" alt="Dr. Santhosh Kumar" width={64} height={64} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Experienced Practitioner</h3>
                 <p className="text-gray-600">
                   Dr. Santhosh Kumar brings over 10 years of expertise in Ayurvedic medicine.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center scroll-reveal animate-fadeInUp animation-delay-100">
-                <Leaf className="h-16 w-16 text-accent mb-4" />
+                <div className="h-16 w-16 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/holistic_approach.jpg" alt="Holistic Approach" width={64} height={64} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Holistic Approach</h3>
                 <p className="text-gray-600">Treating mind, body, and spirit for comprehensive well-being.</p>
               </div>
               <div className="flex flex-col items-center text-center scroll-reveal animate-fadeInUp animation-delay-200">
-                <Quote className="h-16 w-16 text-accent mb-4" />
+                <div className="h-16 w-16 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/patient_centric.webp" alt="Patient-Centric Care" width={64} height={64} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Patient-Centric Care</h3>
                 <p className="text-gray-600">Personalized treatment plans designed for your unique health journey.</p>
               </div>
@@ -612,6 +621,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
       </main>
     </div>
   )

@@ -126,59 +126,59 @@ export default function PanchakarmaPage() {
               Undergoing Panchakarma can lead to a wide array of physical, mental, and emotional improvements.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInLeft">
-                <Leaf className="h-10 w-10 text-primary flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Deep Detoxification</h3>
-                  <p className="text-gray-700">
-                    Eliminates deep-seated toxins from tissues and organs, preventing disease.
-                  </p>
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInLeft">
+                <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/deep_detox.webp" alt="Deep Detoxification" width={96} height={96} className="object-cover w-full h-full" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Deep Detoxification</h3>
+                <p className="text-gray-700">
+                  Eliminates deep-seated toxins from tissues and organs, preventing disease.
+                </p>
               </div>
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInRight">
-                <Heart className="h-10 w-10 text-primary flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Restored Balance</h3>
-                  <p className="text-gray-700">
-                    Balances Vata, Pitta, and Kapha doshas, promoting harmony within the body.
-                  </p>
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInRight">
+                <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/restored_balance.jpg" alt="Restored Balance" width={96} height={96} className="object-cover w-full h-full" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Restored Balance</h3>
+                <p className="text-gray-700">
+                  Balances Vata, Pitta, and Kapha doshas, promoting harmony within the body.
+                </p>
               </div>
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInLeft animation-delay-100">
-                <Sun className="h-10 w-10 text-primary flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Enhanced Immunity</h3>
-                  <p className="text-gray-700">
-                    Strengthens the immune system, making the body more resilient to illness.
-                  </p>
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInLeft animation-delay-100">
+                <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/enhanced_immunity.jpg" alt="Enhanced Immunity" width={96} height={96} className="object-cover w-full h-full" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Enhanced Immunity</h3>
+                <p className="text-gray-700">
+                  Strengthens the immune system, making the body more resilient to illness.
+                </p>
               </div>
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInRight animation-delay-100">
-                <Zap className="h-10 w-10 text-primary flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Increased Energy & Vitality</h3>
-                  <p className="text-gray-700">
-                    Boosts energy levels, improves mental clarity, and promotes a sense of well-being.
-                  </p>
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInRight animation-delay-100">
+                <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/increased_energy.jpg" alt="Increased Energy & Vitality" width={96} height={96} className="object-cover w-full h-full" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Increased Energy & Vitality</h3>
+                <p className="text-gray-700">
+                  Boosts energy levels, improves mental clarity, and promotes a sense of well-being.
+                </p>
               </div>
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInLeft animation-delay-200">
-                <FlaskConical className="h-10 w-10 text-primary flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Better Digestion & Metabolism</h3>
-                  <p className="text-gray-700">
-                    Optimizes digestive fire (Agni), leading to improved nutrient absorption and waste elimination.
-                  </p>
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInLeft animation-delay-200">
+                <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/better_digestion.jpg" alt="Better Digestion & Metabolism" width={96} height={96} className="object-cover w-full h-full" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Better Digestion & Metabolism</h3>
+                <p className="text-gray-700">
+                  Optimizes digestive fire (Agni), leading to improved nutrient absorption and waste elimination.
+                </p>
               </div>
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInRight animation-delay-200">
-                <Heart className="h-10 w-10 text-primary flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Stress Reduction & Mental Clarity</h3>
-                  <p className="text-gray-700">
-                    Calms the nervous system, reduces stress, and enhances focus and emotional stability.
-                  </p>
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md scroll-reveal animate-slideInRight animation-delay-200">
+                <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/stress_reduction.jpg" alt="Stress Reduction & Mental Clarity" width={96} height={96} className="object-cover w-full h-full" />
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Stress Reduction & Mental Clarity</h3>
+                <p className="text-gray-700">
+                  Calms the nervous system, reduces stress, and enhances focus and emotional stability.
+                </p>
               </div>
             </div>
           </div>
