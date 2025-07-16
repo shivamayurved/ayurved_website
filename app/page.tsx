@@ -19,7 +19,7 @@ export default function HomePage() {
   // Carousel state for active slide
   const [selectedIndex, setSelectedIndex] = useState(0);
   const emblaApiRef = useRef<UseEmblaCarouselType[1] | null>(null);
-  const slideCount = 2; // Update if you add more slides
+  const slideCount = 3; // Update if you add more slides
 
   // Listen to carousel changes
   useEffect(() => {
@@ -93,6 +93,41 @@ export default function HomePage() {
                   <div className="bg-green-900/60 backdrop-blur p-3 md:p-8 rounded-xl w-full max-w-xs md:max-w-2xl mx-auto flex flex-col items-center text-center">
                     <h2 className="text-base md:text-4xl font-bold text-white mb-2">Clear Skin, Confident Life</h2>
                     <p className="text-white text-xs md:text-lg mb-4">Holistic Ayurvedic solutions for skin diseases, rashes, and chronic conditions.</p>
+                    <Link href="/contact" passHref>
+                      <div className="w-full flex justify-center">
+                        <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
+                          <span>Book Appointment</span>
+                          <span className="block text-xs mt-1">(first consultation free)</span>
+                        </Button>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+            {/* Third Slide: Paralysis */}
+            <CarouselItem>
+              <div className="relative w-full h-[500px] md:h-[650px]">
+                {/* Mobile image */}
+                <Image
+                  src="/images/banner/hero_section_3_mobile.png"
+                  alt="Paralysis Treatment"
+                  fill
+                  className="object-cover w-full h-full block md:hidden"
+                  priority
+                />
+                {/* Desktop image */}
+                <Image
+                  src="/images/banner/hero_section_3.png"
+                  alt="Paralysis Treatment"
+                  fill
+                  className="object-cover w-full h-full hidden md:block"
+                  priority
+                />
+                <div className="absolute inset-0 flex items-center">
+                  <div className="bg-green-900/60 backdrop-blur p-3 md:p-8 rounded-xl w-full max-w-xs md:max-w-2xl mx-auto flex flex-col items-center text-center">
+                    <h2 className="text-base md:text-4xl font-bold text-white mb-2">Hope & Healing for Paralysis</h2>
+                    <p className="text-white text-xs md:text-lg mb-4">Specialized Ayurvedic therapies for paralysis and neurological recovery.</p>
                     <Link href="/contact" passHref>
                       <div className="w-full flex justify-center">
                         <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
