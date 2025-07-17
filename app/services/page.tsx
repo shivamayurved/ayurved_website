@@ -14,6 +14,7 @@ import {
   Pill,
   Sun,
   Droplet,
+  Flame,
 } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Badge } from "@/components/ui/badge"
@@ -32,13 +33,14 @@ export default function ServicesPage() {
             alt="Ayurvedic herbs, spices, and natural ingredients on a table with a lush green background"
             layout="fill"
             objectFit="cover"
+              className="opacity-30"
           />
           <div className="relative z-10 p-4 max-w-4xl mx-auto scroll-reveal">
             <Badge className="bg-green-600 hover:bg-green-700 text-white mb-4 text-base px-4 py-2">Our Services</Badge>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fadeInUp">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-black leading-tight mb-4 animate-fadeInUp">
               Our Comprehensive Ayurvedic Services
             </h1>
-            <p className="text-lg md:text-xl text-white animate-fadeInUp animation-delay-200">
+            <p className="text-lg md:text-xl text-black animate-fadeInUp animation-delay-200">
               Personalized care for your holistic well-being.
             </p>
           </div>
@@ -156,48 +158,114 @@ export default function ServicesPage() {
               Our clinic offers a full range of Panchakarma treatments for deep detoxification and rejuvenation.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Abhyanga (Oil Massage) */}
               <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp">
-                <FlaskConical className="h-12 w-12 text-accent mb-4" />
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/abhyanga.jpg" alt="Abhyanga (Oil Massage)" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Abhyanga (Oil Massage)</h3>
                 <p className="text-gray-600">
                   Full body massage with warm herbal oils to nourish tissues, relax muscles, and mobilize toxins.
                 </p>
               </div>
+              {/* Swedana (Herbal Steam) */}
               <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-100">
-                <Sun className="h-12 w-12 text-accent mb-4" />
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/Swedana.jpg" alt="Swedana (Herbal Steam)" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Swedana (Herbal Steam)</h3>
                 <p className="text-gray-600">
                   Therapeutic sweating to open channels, liquefy toxins, and prepare the body for cleansing.
                 </p>
               </div>
+              {/* Shirodhara */}
               <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-200">
-                <Droplet className="h-12 w-12 text-accent mb-4" />
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/shirodhara.jpg" alt="Shirodhara" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Shirodhara</h3>
                 <p className="text-gray-600">
-                  Continuous pouring of warm oil on the forehead to calm the nervous system, reduce stress, and improve
-                  sleep.
+                  Continuous pouring of warm oil on the forehead to calm the nervous system, reduce stress, and improve sleep.
                 </p>
               </div>
+              {/* Basti (Medicated Enema) */}
               <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-300">
-                <Syringe className="h-12 w-12 text-accent mb-4" />
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/basti.png" alt="Basti (Medicated Enema)" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Basti (Medicated Enema)</h3>
                 <p className="text-gray-600">
-                  The most important Panchakarma therapy for balancing Vata dosha, beneficial for various chronic
-                  conditions.
+                  The most important Panchakarma therapy for balancing Vata dosha, beneficial for various chronic conditions.
                 </p>
               </div>
+              {/* Nasya (Nasal Cleansing) */}
               <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-400">
-                <ShieldCheck className="h-12 w-12 text-accent mb-4" />
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/nasya.jpg" alt="Nasya (Nasal Cleansing)" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Nasya (Nasal Cleansing)</h3>
                 <p className="text-gray-600">
                   Administration of herbal oils through nasal passages to cleanse and nourish the head region.
                 </p>
               </div>
+              {/* Udvartana (Herbal Powder Massage) */}
               <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-500">
-                <Heart className="h-12 w-12 text-accent mb-4" />
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/udvartana.jpg" alt="Udvartana (Herbal Powder Massage)" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Udvartana (Herbal Powder Massage)</h3>
                 <p className="text-gray-600">
                   Dry massage with herbal powders to reduce cellulite, improve circulation, and exfoliate skin.
+                </p>
+              </div>
+              {/* Janu Basti */}
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-600">
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/janubasti.png" alt="Janu Basti" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Janu Basti</h3>
+                <p className="text-gray-600">
+                  Warm medicated oil therapy for the knees, effective for pain, stiffness, and joint health.
+                </p>
+              </div>
+              {/* Kati Basti */}
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-700">
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/katibasti.jpg" alt="Kati Basti" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Kati Basti</h3>
+                <p className="text-gray-600">
+                  Localized oil therapy for the lower back, relieves lumbar pain, sciatica, and muscle spasms.
+                </p>
+              </div>
+              {/* Greeva Basti */}
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-800">
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/Greeva basti.png" alt="Greeva Basti" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Greeva Basti</h3>
+                <p className="text-gray-600">
+                  Medicated oil therapy for the neck region, helps with cervical spondylosis and neck stiffness.
+                </p>
+              </div>
+              {/* Agnikarma */}
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-900">
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/agnikarma.jpg" alt="Agnikarma" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Agnikarma</h3>
+                <p className="text-gray-600">
+                  Therapeutic heat treatment for pain relief in musculoskeletal disorders and chronic conditions.
+                </p>
+              </div>
+              {/* Raktamokshana */}
+              <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md hover-lift interactive-card scroll-reveal animate-fadeInUp animation-delay-1000">
+                <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-4">
+                  <Image src="/images/panchakarma/rakhtamokshana (Leech Therapy).jpg" alt="Raktamokshana" width={128} height={128} className="object-cover w-full h-full" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Raktamokshana</h3>
+                <p className="text-gray-600">
+                  Bloodletting therapy to purify blood, used for skin diseases, inflammation, and detoxification.
                 </p>
               </div>
             </div>

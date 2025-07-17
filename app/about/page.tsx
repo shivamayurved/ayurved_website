@@ -55,10 +55,7 @@ export default function AboutPage() {
                 the human body.
               </p>
               <p className="text-lg text-gray-700 mb-6">
-                He completed his Bachelor of Ayurvedic Medicine and Surgery (BAMS) from Government Ayurveda Medical College and Hospital, Mysore, followed
-                by extensive practical training and specialization in various Ayurvedic therapies. Dr. Kumar believes in
-                a patient-centric approach, crafting personalized treatment plans that address the root cause of
-                ailments.
+                He completed his Bachelor of Ayurvedic Medicine and Surgery (BAMS) from Government Ayurveda Medical College and Hospital, and his MD (Ayu) in Samhita and Siddhanta. He is currently an Associate Professor and Head of Department (HOD) of the Samhita-Siddhanta department, followed by extensive practical training and specialization in various Ayurvedic therapies. Dr. Kumar believes in a patient-centric approach, crafting personalized treatment plans that address the root cause of ailments.
               </p>
               <Link href="/contact" passHref>
                 <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md hover-lift">

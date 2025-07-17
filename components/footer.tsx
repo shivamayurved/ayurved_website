@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Leaf, Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -11,17 +12,16 @@ export function Footer() {
           {/* Clinic Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="bg-primary p-2 rounded-full">
-                <Leaf className="h-6 w-6 text-white" />
+              <div className="flex items-center justify-center">
+                <Image src="/images/final_logo .png" alt="Shivam ayurvedalaya logo" width={40} height={40} />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Dr. Santhosh Kumar</h3>
+                <h3 className="text-xl font-bold">Shivam ayurvedalaya</h3>
                 <p className="text-gray-400 text-sm">ayurveda and panchakarma center</p>
               </div>
             </div>
             <p className="text-gray-300">
-              Authentic Ayurvedic healing with 10+ years of experience. Serving Raichur with personalized natural
-              treatments.
+              Authentic Ayurvedic healing with 10+ years of experience. Serving Raichur with personalized natural treatments.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
@@ -38,8 +38,6 @@ export function Footer() {
                 { href: "/about", label: "About Dr. Kumar" },
                 { href: "/services", label: "Our Services" },
                 { href: "/panchakarma", label: "Panchakarma" },
-                { href: "/testimonials", label: "Patient Stories" },
-                { href: "/blog", label: "Health Blog" },
                 { href: "/contact", label: "Contact Us" },
               ].map((link) => (
                 <Link
@@ -76,14 +74,13 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-accent" />
-                <span className="text-gray-300">info@drSanthoshayurveda.com</span>
+                <span className="text-gray-300">shivamayurvedalaya@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-accent mt-1" />
                 <span className="text-gray-300">
-                  Near Government Hospital,
-                  <br />
-                  Station Road, Raichur - 584101
+                  Smart Point, Bus Stop, near, Vasavi Nagar Rd, Vidya Nagar,<br />
+                  Raichur, Karnataka 584101
                 </span>
               </div>
               <div className="flex items-center space-x-3">
@@ -107,7 +104,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Dr. Santhosh Kumar's ayurveda and panchakarma center. All rights reserved.</p>
+          <p>&copy; 2024 Shivam ayurvedalaya. All rights reserved.</p>
           <p className="mt-2 text-sm">Licensed Ayurvedic Practitioner | Government of Karnataka Certified</p>
         </div>
       </div>

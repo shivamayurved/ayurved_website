@@ -28,6 +28,7 @@ export default function RootLayout({
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="icon" href="/images/final_logo%20.png" type="image/png" />
       </Head>
       <html lang="en" suppressHydrationWarning>
         <body className={inter.className}>

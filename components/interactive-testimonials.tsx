@@ -15,7 +15,7 @@ export function InteractiveTestimonials() {
       rating: 5,
       quote:
         "Dr. Santhosh Kumar’s Ayurvedic treatments transformed my chronic digestive issues. I feel lighter, healthier, and full of energy. Highly recommend!",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/testimonials/woman_1.jpg",
     },
     {
       name: "Rajesh Singh",
@@ -23,7 +23,7 @@ export function InteractiveTestimonials() {
       rating: 5,
       quote:
         "The personalized approach to my joint pain was incredible. After years of discomfort, I finally found lasting relief through Ayurveda here.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/testimonials/man_1.jpg",
     },
     {
       name: "Anjali Devi",
@@ -31,7 +31,7 @@ export function InteractiveTestimonials() {
       rating: 5,
       quote:
         "Panchakarma therapy at this clinic was a truly rejuvenating experience. My skin cleared up, and my stress levels significantly reduced. Thank you!",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/testimonials/woman_2.jpeg",
     },
     {
       name: "Suresh Kumar",
@@ -39,7 +39,7 @@ export function InteractiveTestimonials() {
       rating: 4,
       quote:
         "I was skeptical at first, but Dr. Kumar’s expertise and the effectiveness of the herbal remedies for my allergies have made me a believer in Ayurveda.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/testimonials/man_2.jpg",
     },
     {
       name: "Meena Reddy",
@@ -47,7 +47,7 @@ export function InteractiveTestimonials() {
       rating: 5,
       quote:
         "The holistic care for my infertility journey was compassionate and effective. I am so grateful for the support and positive results.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/testimonials/woman_3.jpg",
     },
     {
       name: "Arjun Prasad",
@@ -55,7 +55,7 @@ export function InteractiveTestimonials() {
       rating: 5,
       quote:
         "Excellent clinic with genuine Ayurvedic treatments. My chronic back pain has improved dramatically, and I feel much more active.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "/images/testimonials/man_3.jpg",
     },
   ]
 
@@ -98,9 +98,9 @@ export function InteractiveTestimonials() {
               <Image
                 src={currentTestimonial.image || "/placeholder.svg"}
                 alt={currentTestimonial.name}
-                width={40}
-                height={40}
-                className="rounded-full object-cover border border-gray-300"
+                width={64}
+                height={64}
+                className="rounded-full object-cover border-2 border-gray-300"
               />
               <span className="text-sm font-semibold text-gray-900 mt-1">{currentTestimonial.name}</span>
               <span className="text-xs text-gray-600">{currentTestimonial.location}</span>

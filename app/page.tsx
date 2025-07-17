@@ -19,25 +19,30 @@ export default function HomePage() {
   // Carousel state for active slide
   const [selectedIndex, setSelectedIndex] = useState(0);
   const emblaApiRef = useRef<UseEmblaCarouselType[1] | null>(null);
-  const slideCount = 3; // Update if you add more slides
+  const slideCount = 5; // Updated for 5 slides
 
-  // Listen to carousel changes
+  // Listen to carousel changes (fixed infinite loop)
   useEffect(() => {
-    if (!emblaApiRef.current) return;
     const api = emblaApiRef.current;
-    const onSelect = () => setSelectedIndex(api.selectedScrollSnap());
+    if (!api) return;
+    const onSelect = () => {
+      const idx = api.selectedScrollSnap();
+      setSelectedIndex(prev => (prev !== idx ? idx : prev));
+    };
     api.on("select", onSelect);
+    // Set initial index
+    setSelectedIndex(api.selectedScrollSnap());
     return () => { api.off("select", onSelect); };
   }, [emblaApiRef.current]);
 
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Carousel Section - moved outside main for full-bleed */}
-      <section className="relative w-full h-[500px] md:h-[650px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 p-0">
+      <section className="relative w-full h-[600px] md:h-[750px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 p-0 pt-16">
         <Carousel className="w-full h-full" setApi={api => (emblaApiRef.current = api)}>
           <CarouselContent>
             <CarouselItem>
-              <div className="relative w-full h-[500px] md:h-[650px]">
+              <div className="relative w-full h-[600px] md:h-[750px]">
                 {/* Mobile image */}
                 <Image
                   src="/images/banner/hero_section_1_mobile.png"
@@ -61,19 +66,19 @@ export default function HomePage() {
                   </div>
                 </div>
                 {/* Book Appointment Button at the bottom */}
-                <div className="absolute left-1/2 bottom-16 -translate-x-1/2 z-20 w-full flex justify-center">
-                  <Link href="/contact" passHref>
-                    <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
-                      <span>Book Appointment</span>
-                      <span className="block text-xs mt-1">(first consultation free)</span>
-                    </Button>
-                  </Link>
+                <div className="absolute left-1/2 bottom-28 -translate-x-1/2 z-20 w-full flex justify-center">
+                    <Link href="/contact" passHref>
+                        <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
+                          <span>Book Appointment</span>
+                          <span className="block text-xs mt-1">(first consultation free)</span>
+                        </Button>
+                    </Link>
                 </div>
               </div>
             </CarouselItem>
             {/* Second Slide: Skin Disease/Rashes */}
             <CarouselItem>
-              <div className="relative w-full h-[500px] md:h-[650px]">
+              <div className="relative w-full h-[600px] md:h-[750px]">
                 {/* Mobile image */}
                 <Image
                   src="/images/banner/hero_section_2_mobile.png"
@@ -97,7 +102,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 {/* Book Appointment Button at the bottom */}
-                <div className="absolute left-1/2 bottom-16 -translate-x-1/2 z-20 w-full flex justify-center">
+                <div className="absolute left-1/2 bottom-28 -translate-x-1/2 z-20 w-full flex justify-center">
                   <Link href="/contact" passHref>
                     <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
                       <span>Book Appointment</span>
@@ -109,7 +114,7 @@ export default function HomePage() {
             </CarouselItem>
             {/* Third Slide: Paralysis */}
             <CarouselItem>
-              <div className="relative w-full h-[500px] md:h-[650px]">
+              <div className="relative w-full h-[600px] md:h-[750px]">
                 {/* Mobile image */}
                 <Image
                   src="/images/banner/hero_section_3_mobile.png"
@@ -133,7 +138,79 @@ export default function HomePage() {
                   </div>
                 </div>
                 {/* Book Appointment Button at the bottom */}
-                <div className="absolute left-1/2 bottom-16 -translate-x-1/2 z-20 w-full flex justify-center">
+                <div className="absolute left-1/2 bottom-28 -translate-x-1/2 z-20 w-full flex justify-center">
+                    <Link href="/contact" passHref>
+                        <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
+                          <span>Book Appointment</span>
+                          <span className="block text-xs mt-1">(first consultation free)</span>
+                        </Button>
+                  </Link>
+                </div>
+              </div>
+            </CarouselItem>
+            {/* Fourth Slide: Infertility & Sexual Problems */}
+            <CarouselItem>
+              <div className="relative w-full h-[600px] md:h-[750px]">
+                {/* Mobile image */}
+                <Image
+                  src="/images/banner/hero_section_4_mobile.png"
+                  alt="Infertility and Sexual Problems"
+                  fill
+                  className="object-cover w-full h-full block md:hidden"
+                  priority
+                />
+                {/* Desktop image (fallback to mobile for now) */}
+                <Image
+                  src="/images/banner/hero_section_4_mobile.png"
+                  alt="Infertility and Sexual Problems"
+                  fill
+                  className="object-cover w-full h-full hidden md:block"
+                  priority
+                />
+                <div className="absolute inset-0 flex items-center">
+                  <div className="bg-green-900/60 backdrop-blur p-3 md:p-8 rounded-xl w-full max-w-xs md:max-w-2xl mx-auto flex flex-col items-center text-center">
+                    <h2 className="text-base md:text-4xl font-bold text-white mb-2">Restoring Fertility & Intimacy</h2>
+                    <p className="text-white text-xs md:text-lg mb-4">Ayurvedic therapies for infertility, sexual wellness, and reproductive health.</p>
+                  </div>
+                      </div>
+                {/* Book Appointment Button at the bottom */}
+                <div className="absolute left-1/2 bottom-28 -translate-x-1/2 z-20 w-full flex justify-center">
+                  <Link href="/contact" passHref>
+                    <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
+                      <span>Book Appointment</span>
+                      <span className="block text-xs mt-1">(first consultation free)</span>
+                    </Button>
+                    </Link>
+                </div>
+              </div>
+            </CarouselItem>
+            {/* Fifth Slide: Piles */}
+            <CarouselItem>
+              <div className="relative w-full h-[600px] md:h-[750px]">
+                {/* Mobile image */}
+                <Image
+                  src="/images/banner/hero_section_5_mobile.png"
+                  alt="Piles Treatment"
+                  fill
+                  className="object-cover w-full h-full block md:hidden"
+                  priority
+                />
+                {/* Desktop image (fallback to mobile for now) */}
+                <Image
+                  src="/images/banner/hero_section_5_mobile.png"
+                  alt="Piles Treatment"
+                  fill
+                  className="object-cover w-full h-full hidden md:block"
+                  priority
+                />
+                <div className="absolute inset-0 flex items-center">
+                  <div className="bg-green-900/60 backdrop-blur p-3 md:p-8 rounded-xl w-full max-w-xs md:max-w-2xl mx-auto flex flex-col items-center text-center">
+                    <h2 className="text-base md:text-4xl font-bold text-white mb-2">Relief from Piles & Anorectal Disorders</h2>
+                    <p className="text-white text-xs md:text-lg mb-4">Comprehensive Ayurvedic care for piles, fissures, and related conditions.</p>
+                  </div>
+                </div>
+                {/* Book Appointment Button at the bottom */}
+                <div className="absolute left-1/2 bottom-28 -translate-x-1/2 z-20 w-full flex justify-center">
                   <Link href="/contact" passHref>
                     <Button className="bg-green-600 hover:bg-green-700 text-white text-base md:text-lg w-full max-w-xs px-8 py-4 rounded-full shadow-lg hover-lift flex flex-col items-center">
                       <span>Book Appointment</span>
@@ -165,7 +242,7 @@ export default function HomePage() {
             {[...Array(slideCount)].map((_, idx) => (
               <button
                 key={idx}
-                className={`w-3 h-3 rounded-full border border-green-700 ${selectedIndex === idx ? 'bg-green-600' : 'bg-white/80'}`}
+                className={`w-3 h-3 rounded-full border border-green-700 transition-colors duration-200 ${selectedIndex === idx ? 'bg-green-600' : 'bg-white/80'}`}
                 onClick={() => emblaApiRef.current && emblaApiRef.current.scrollTo(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -208,7 +285,7 @@ export default function HomePage() {
                   <Users className="h-8 w-8 text-accent animate-float" style={{ animationDelay: "1s" }} />
                   <div>
                     <p className="font-semibold">
-                      <AnimatedCounter to={500} suffix="+ Patients" />
+                      <AnimatedCounter to={2500} suffix="+ Patients" />
                     </p>
                     <p className="text-sm text-gray-600">Successfully Treated</p>
                   </div>
@@ -356,11 +433,11 @@ export default function HomePage() {
             </p>
             <InteractiveTestimonials />
             <div className="mt-12 scroll-reveal">
-              <Link href="/testimonials" passHref>
+              {/* <Link href="/testimonials" passHref>
                 <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full shadow-lg hover-lift">
                   Read All Testimonials
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </section>
@@ -374,12 +451,12 @@ export default function HomePage() {
             <p className="text-lg text-gray-700 mb-12 max-w-3xl mx-auto scroll-reveal">
               Witness the remarkable changes our patients have experienced on their healing journey.
             </p>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid gap-8 md:grid-cols-2">
               {/* Custom Before/After Portrait Card */}
-              <Card className="p-6 shadow-lg interactive-card scroll-reveal animate-fadeInUp">
+              <Card className="p-4 md:p-6 shadow-lg interactive-card scroll-reveal animate-fadeInUp">
                 <CardContent className="p-0">
-                  <div className="flex justify-center items-center pt-8 pb-2">
-                    <div className="relative w-[340px] h-[340px] md:w-[420px] md:h-[420px] max-w-full rounded-xl overflow-hidden border-2 border-gray-300 shadow-lg mb-6">
+                  <div className="flex flex-col justify-center items-center pt-4 pb-2 md:pt-8">
+                    <div className="relative w-64 h-64 md:w-[340px] md:h-[340px] lg:w-[420px] lg:h-[420px] max-w-full rounded-xl overflow-hidden border-2 border-gray-300 shadow-lg mb-4 md:mb-6">
                     <Image
                         src="/images/Transformation.png"
                         alt="Transformation through Ayurveda"
@@ -389,40 +466,46 @@ export default function HomePage() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">Skin Tag Removal</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 text-center">Skin Tag Removal</h3>
+                  <p className="text-gray-600 text-sm md:text-base">
                     "Visible improvement after Ayurvedic treatment. Non-surgical, natural healing."
                   </p>
                 </CardContent>
               </Card>
-              <Card className="p-6 shadow-lg interactive-card scroll-reveal animate-fadeInUp animation-delay-100">
+              <Card className="p-4 md:p-6 shadow-lg interactive-card scroll-reveal animate-fadeInUp animation-delay-100">
                 <CardContent className="p-0">
-                  <div className="relative h-64 w-full mb-4 rounded-lg overflow-hidden">
-                    {/* Replace with a real "before" image for joint pain */}
-                    <Image
-                      src="/placeholder.svg?height=400&width=600"
-                      alt="Before treatment for joint pain"
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-2xl font-bold">
-                      BEFORE
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="relative h-48 w-full sm:w-1/2 sm:h-64 mb-2 sm:mb-0 rounded-lg overflow-hidden">
+                      <video
+                        src="/videos/before_client_video.mp4"
+                        controls
+                        className="object-cover w-full h-full rounded-lg"
+                        poster="/images/before_client.png"
+                      />
+                      <div
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg md:text-2xl font-bold"
+                        style={{ pointerEvents: 'none' }}
+                      >
+                        BEFORE
+                      </div>
+                    </div>
+                    <div className="relative h-48 w-full sm:w-1/2 sm:h-64 rounded-lg overflow-hidden">
+                      <video
+                        src="/videos/after_client_video.mp4"
+                        controls
+                        className="object-cover w-full h-full rounded-lg"
+                        poster="/images/after_client.png"
+                      />
+                      <div
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg md:text-2xl font-bold"
+                        style={{ pointerEvents: 'none' }}
+                      >
+                        AFTER
+                      </div>
                     </div>
                   </div>
-                  <div className="relative h-64 w-full rounded-lg overflow-hidden">
-                    {/* Replace with a real "after" image for joint pain */}
-                    <Image
-                      src="/placeholder.svg?height=400&width=600"
-                      alt="After treatment for joint pain"
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                    <div className="absolute inset-0 bg-primary bg-opacity-70 flex items-center justify-center text-white text-2xl font-bold">
-                      AFTER
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mt-4 mb-2">Joint Pain & Mobility</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mt-4 mb-2 text-center">Joint Pain & Mobility</h3>
+                  <p className="text-gray-600 text-sm md:text-base">
                     "Regained flexibility and significantly reduced pain thanks to personalized therapies."
                   </p>
                 </CardContent>
@@ -568,7 +651,7 @@ export default function HomePage() {
                             muted
                             playsInline
                             preload="metadata"
-                            poster="/images/Client_image2.jpg"
+                            poster="/images/agnikarna_thumbnail.jpg"
                           />
                           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                             <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.4)"/><polygon points="26,20 48,32 26,44" fill="#fff"/></svg>

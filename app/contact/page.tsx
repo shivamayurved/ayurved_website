@@ -8,9 +8,36 @@ import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image" // Import Image component
+import { useRef, useState } from "react"
+import emailjs from "@emailjs/browser"
 
 export default function ContactPage() {
   useScrollAnimation()
+  const form = useRef(null)
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState("")
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setSuccess(false)
+    setError("")
+    emailjs.sendForm(
+      'service_3yeqmw8',
+      'template_wo69w2e',
+      form.current,
+      'dkwW-o2DUNf5CC1dQ'
+    )
+    .then(() => {
+      setSuccess(true)
+      setLoading(false)
+      form.current.reset()
+    }, (err) => {
+      setError("Failed to send message. Please try again later.")
+      setLoading(false)
+    })
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
@@ -56,8 +83,8 @@ export default function ContactPage() {
                 <Mail className="h-8 w-8 text-primary flex-shrink-0" />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">Email</h3>
-                  <a href="mailto:info@drSanthoshayurveda.com" className="text-primary hover:text-primary/90 underline">
-                    info@drSanthoshayurveda.com
+                  <a href="mailto:shivamayurvedalaya@gmail.com" className="text-primary hover:text-primary/90 underline">
+                    shivamayurvedalaya@gmail.com
                   </a>
                   <p className="text-sm text-gray-500">We typically respond within 24 hours</p>
                 </div>
@@ -67,9 +94,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">Address</h3>
                   <p className="text-gray-700">
-                    Near Government Hospital,
-                    <br />
-                    Station Road, Raichur - 584101, Karnataka, India
+                    Smart Point, Bus Stop, near, Vasavi Nagar Rd, Vidya Nagar,<br />
+                    Raichur, Karnataka 584101
                   </p>
                   <p className="text-sm text-gray-500">Visit us during clinic hours</p>
                 </div>
@@ -106,30 +132,30 @@ export default function ContactPage() {
               <CardTitle className="text-3xl font-bold text-gray-900 text-center">Send Us a Message</CardTitle>
             </CardHeader>
             <CardContent className="p-6">
-              <form className="space-y-6">
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div>
-                  <Label htmlFor="name" className="text-lg">
+                  <Label htmlFor="user_name" className="text-lg">
                     Your Name
                   </Label>
-                  <Input id="name" placeholder="Enter your name" className="mt-2 p-3 text-base" />
+                  <Input id="user_name" name="user_name" placeholder="Enter your name" className="mt-2 p-3 text-base" required />
                 </div>
                 <div>
-                  <Label htmlFor="email" className="text-lg">
+                  <Label htmlFor="user_email" className="text-lg">
                     Your Email
                   </Label>
-                  <Input id="email" type="email" placeholder="Enter your email" className="mt-2 p-3 text-base" />
+                  <Input id="user_email" name="user_email" type="email" placeholder="Enter your email" className="mt-2 p-3 text-base" required />
                 </div>
                 <div>
-                  <Label htmlFor="phone" className="text-lg">
+                  <Label htmlFor="user_phone" className="text-lg">
                     Phone Number (Optional)
                   </Label>
-                  <Input id="phone" type="tel" placeholder="Enter your phone number" className="mt-2 p-3 text-base" />
+                  <Input id="user_phone" name="user_phone" type="tel" placeholder="Enter your phone number" className="mt-2 p-3 text-base" />
                 </div>
                 <div>
                   <Label htmlFor="subject" className="text-lg">
                     Subject
                   </Label>
-                  <Input id="subject" placeholder="Subject of your message" className="mt-2 p-3 text-base" />
+                  <Input id="subject" name="subject" placeholder="Subject of your message" className="mt-2 p-3 text-base" />
                 </div>
                 <div>
                   <Label htmlFor="message" className="text-lg">
@@ -137,14 +163,19 @@ export default function ContactPage() {
                   </Label>
                   <Textarea
                     id="message"
+                    name="message"
                     rows={5}
                     placeholder="Type your message here..."
                     className="mt-2 p-3 text-base"
+                    required
                   />
                 </div>
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white text-lg py-3">
-                  Send Message
+                <input type="hidden" name="source" value="Contact Form" />
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white text-lg py-3" disabled={loading}>
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
+                {success && <p className="text-green-600 text-center mt-2">Message sent successfully!</p>}
+                {error && <p className="text-red-600 text-center mt-2">{error}</p>}
               </form>
             </CardContent>
           </Card>
@@ -157,15 +188,15 @@ export default function ContactPage() {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">Find Us on the Map</h2>
           <div className="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.9999999999995!2d77.35000000000001!3d16.200000000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDEyJzAwLjAiTiA3N8KwMjEnMDQuMCJF!5e0!3m2!1sen!2sin!4v1678912345678!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7840014.069623907!2d70.39962282159618!3d16.367243498045603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc9d777b732f41d%3A0x61d807c4036c1cf1!2sS%20DREAMS%20AYURVEDA%20PANCHAKARMA%20CENTER!5e0!3m2!1sen!2sin!4v1752737986736!5m2!1sen!2sin"
               width="100%"
               height="450"
               style={{ border: 0 }}
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              aria-label="Google Map of Dr. Santhosh Kumar's ayurveda and panchakarma center"
-            ></iframe>
+              aria-label="Google Map of Shivam ayurvedalaya"
+            />
           </div>
         </div>
       </section>

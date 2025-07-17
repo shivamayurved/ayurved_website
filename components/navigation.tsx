@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone, Leaf } from "lucide-react"
+import Image from "next/image"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,23 +17,21 @@ export function Navigation() {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/panchakarma", label: "Panchakarma" },
-    { href: "/testimonials", label: "Testimonials" },
-    { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ]
 
   return (
-    <nav className="bg-white/70 backdrop-blur-md shadow-none sticky top-0 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
-            <div className="bg-primary p-2 rounded-full">
-              <Leaf className="h-6 w-6 text-white" />
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+            <div className="flex items-center justify-center">
+              <Image src="/images/final_logo .png" alt="Shivam ayurvedalaya logo" width={40} height={40} />
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-primary whitespace-nowrap">Dr. Santhosh Kumar</h1>
-              <p className="text-xs text-gray-600 whitespace-nowrap">ayurveda and panchakarma center</p>
+            <div className="leading-tight">
+              <h1 className="text-lg font-bold text-primary whitespace-nowrap">Shivam ayurvedalaya</h1>
+              <p className="text-[11px] text-gray-600 whitespace-nowrap -mt-1">ayurveda and panchakarma center</p>
             </div>
           </Link>
 
@@ -60,7 +59,7 @@ export function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             {isClient && (
               <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 hover:text-primary">
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
